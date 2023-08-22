@@ -226,9 +226,25 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yap.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+
+function sesliHarfSayaci(str) {
+  const sesliHarfler = ["a", "e", "ı", "i", "o", "ö", "u", "ü"];
+  let sesliHarfSayisi = 0;
+
+  str = str.toLowerCase();
+
+  for (let i = 0; i < str.length; i++) {
+      if (sesliHarfler.includes(str[i])) {
+          sesliHarfSayisi++;
+      }
+  }
+
+  return sesliHarfSayisi;
 }
+
+const metin = "Merhaba, nasılsınız?";
+const sesliHarfSayisi = sesliHarfSayaci(metin);
+console.log(`Metindeki sesli harf sayısı: ${sesliHarfSayisi}`);
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
 function sa() {
